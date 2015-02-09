@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ExampleTableViewController.h
 //  RefreshControlExample
 //
 //  Created by Adam Johns on 2/9/15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface ExampleTableViewController : UITableViewController
 
 @end
-
