@@ -10,9 +10,9 @@
 
 #import "ExampleTableViewController.h"
 #import "CustomTableViewCell.h"
+#import "AppDelegate.h"
 
 @interface ExampleTableViewController ()
-
 @end
 
 @implementation ExampleTableViewController
@@ -31,7 +31,17 @@
     CustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ExampleReuse" forIndexPath:indexPath];
     
     // Configure the cell...
-    cell.label.text = @"Feb 23";
+    
+    
+    if (indexPath.row > 2) {
+        cell.middleView.backgroundColor = [UIColor lightGrayColor];
+        cell.label.text = [NSString stringWithFormat:@"Feb %ld", indexPath.row+1];
+    }
+    else {
+        AppDelegate *del = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        cell.middleView.backgroundColor = del.globalTint;
+        cell.label.text = @"Feb 1";
+    }
     
     return cell;
 }
